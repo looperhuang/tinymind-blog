@@ -1,5 +1,10 @@
 [
   {
+    "id": "1730251975932",
+    "content": "## Raid Helper\n一個Discord Bot 簡易規劃副本行程  \nhttps://raid-helper.dev/documentation/intro",
+    "timestamp": "2024-10-30T01:32:55.932Z"
+  },
+  {
     "id": "1730251076210",
     "content": "## Interprocess Communication (IPC)\nName Pipes   \nhttps://weblogs.asp.net/ricardoperes/local-machine-interprocess-communication-with-net",
     "timestamp": "2024-10-30T01:17:56.210Z"
