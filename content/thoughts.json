@@ -1,5 +1,10 @@
 [
   {
+    "id": "1730251076210",
+    "content": "## Interprocess Communication (IPC)\nName Pipes   \nhttps://weblogs.asp.net/ricardoperes/local-machine-interprocess-communication-with-net",
+    "timestamp": "2024-10-30T01:17:56.210Z"
+  },
+  {
     "id": "1728007641094",
     "content": "測試看看這個tiny-mind的效果如何",
     "timestamp": "2024-10-04T02:07:21.094Z"
