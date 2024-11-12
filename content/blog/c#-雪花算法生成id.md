@@ -18,7 +18,7 @@ date: 2024-11-12T02:40:17.062Z
 - 10 位可為(10 位機器 ID) 或 (5 位數據中心 ID + 5 位機器 ID)，可識別 1024 台機器
 - 12 位為序列號 => 代表每毫秒可以有 4096 個 ID
 
-![snowflake_structure.image](../../assets/images/2024-11-12/1731380060528.png)
+![snowflake_structure.image](https://github.com/looperhuang/tinymind-blog/blob/main/assets/images/2024-11-12/1731380060528.png)
 
 ## 優缺點
 
