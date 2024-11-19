@@ -11,7 +11,7 @@ Install-Package Quartz.Serialization.Json
 ```
 ## appsetting.json 
 這邊使用Oracle資料庫做為持久化儲存[各類資料庫腳本](https://github.com/quartznet/quartznet/tree/main/database/tables)
-```
+```json
 "Quartz": {
   "quartz.scheduler.instanceName": "QuartzOracleScheduler",
   "quartz.scheduler.instanceId": "AUTO",
@@ -25,7 +25,7 @@ Install-Package Quartz.Serialization.Json
 }
 ```
 
-## Job
+## Job.cs
 ```C#
  public class SendTasJob : IJob
  {
@@ -135,6 +135,14 @@ builder.Services.AddTransient<SendTasJob>(); // Job註冊
 AddQuartzServer 會多一個Health Check 檢查 scheduler   
 Source Code如下
 ```C# 
+using System;
+
+using Microsoft.Extensions.DependencyInjection;
+
+#if SUPPORTS_HEALTH_CHECKS
+using Quartz.AspNetCore.HealthChecks;
+#endif
+
 namespace Quartz
 {
     public static class QuartzServiceCollectionExtensions
@@ -156,7 +164,7 @@ namespace Quartz
 ```
 
 ## IIS回收機制，排程失效
-- 關閉回收機制
+- 關閉回收機制(程式應用集區 => 進階設定)  
 ![InetMgr_ndjANFedAK.png](https://github.com/looperhuang/tinymind-blog/blob/main/assets/images/2024-11-19/1731979706293.png?raw=true)
 ![InetMgr_8EXFtPapjN.png](https://github.com/looperhuang/tinymind-blog/blob/main/assets/images/2024-11-19/1731979731228.png?raw=true)
 - 定期呼叫api維持server keep alive (ex.使用window排程)
@@ -180,7 +188,7 @@ try {
 $logEntry | Out-File -FilePath $logFile -Append
 
 ```
-- 回收後，應用關閉事件添加應用重啟
+- 回收後，應用關閉事件添加應用重啟  
 ![35fcb716e101ade84bd9ea48969cf1fe.png](https://github.com/looperhuang/tinymind-blog/blob/main/assets/images/2024-11-19/1731979950617.png?raw=true)
 
 ## 參考資料
