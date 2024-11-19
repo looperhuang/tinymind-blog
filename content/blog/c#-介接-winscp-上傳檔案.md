@@ -3,14 +3,14 @@ title: C# 介接 WinScp 上傳檔案
 date: 2024-10-04T07:19:50.946Z
 ---
 
-C# WinScp 套件安裝
+## Install
 
-```
-dotnet add package WinSCP --version 6.3.5
+```powershell
+dotnet add package WinSCP
 ```
 
-Example : 
-```
+## Example
+```C# 
 // 連線設定
 SessionOptions sessionOptions = new SessionOptions
 {
@@ -37,3 +37,6 @@ transferResult = this.session.PutFiles(localFilePath, remoteDirectory);
 // 檢查上傳是否成功
 transferResult.Check();
 ```
+
+## 參考資料
+https://winscp.net/eng/docs/library#csharp
